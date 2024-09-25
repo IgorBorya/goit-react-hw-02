@@ -1,11 +1,12 @@
 import React from "react";
+import App from "../../App";
 
-export const Feedback = () => {
+export const Feedback = ({ feedback }) => {
   return (
     <div>
-      <p>Good: </p>
-      <p>Neutral:</p>
-      <p>Bad:</p>
+      <p>Good: {feedback.good}</p>
+      <p>Neutral: {feedback.neutral}</p>
+      <p>Bad:{feedback.bad}</p>
     </div>
   );
 };

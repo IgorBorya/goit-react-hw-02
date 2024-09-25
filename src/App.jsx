@@ -12,11 +12,18 @@ function App() {
     neutral: 0,
     bad: 0,
   });
+
+  const updateFeedback = (feedbackType) => {
+    setFeedback((prevState) => ({
+      ...prevState,
+      [feedbackType]: prevState[feedbackType] + 1,
+    }));
+  };
   return (
     <>
       <Description></Description>
-      <Options></Options>
-      <Feedback></Feedback>
+      <Options updateFeedback={updateFeedback}></Options>
+      <Feedback feedback={feedback}></Feedback>
     </>
   );
 }
